@@ -1,17 +1,12 @@
 package main;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 import pedido.Pedido;
-import pedido.Printable;
 
 public class Main {
 	public static void main(String[] args) {
 		Pedido pedido = Pedido.getInstance();
 		
-		pedido.cadastrarEmpresa("Extra", "São Paulo - SP", "Centro", "Samuel Klein", 83, "33.041.260/0652-90", "636.169.915.112", "23.126.457");
+		pedido.cadastrarEmpresa("Extra", "São Paulo - SP", "Centro", "Samuel Klein", 83, 33041260065290l, 636169915112l, 23126457);
 		pedido.cadastrarCliente("Henrique Jorge Barateli", "henriquejb194@email.com", 56312876);
 		pedido.setData(26, 6, 2020, 22, 10, 1); // dia - mes - ano - hora - minuto - segundo
 		

@@ -6,7 +6,7 @@ import pedido.auxiliar.*;
 
 import sistema.Cadastro;
 
-public class Pedido extends PedidoAux{
+public class Pedido extends PedidoAux implements Checkable{
 	private Cadastro cliente;
 	private Cadastro empresa;
 	private String localizacao;
@@ -23,15 +23,18 @@ public class Pedido extends PedidoAux{
 		return pedido;
 	}
 	
+	
 	public void setProduto(String titulo, String id, Double quantidade, Double valorVenda) {
 		PedidoItem pedidoitem = Requestable.inicializarPedidoItem(titulo, id, quantidade, valorVenda);
 		setPedidoItem(pedidoitem);
 	}
 	
+	
 	public void setLivro(String titulo, String id, Integer paginas, Double quantidade, Double valorVenda) {
 		PedidoItem livro = Requestable.Livro(titulo, paginas, id, quantidade, valorVenda);
 		setPedidoItem(livro);
 	}
+	
 	
 	public void setCd(String titulo, String id, Integer paginas, Double quantidade, Double valorVenda) {
 		PedidoItem cd = Requestable.Cd(titulo, paginas, id, quantidade, valorVenda);
@@ -42,11 +45,13 @@ public class Pedido extends PedidoAux{
 		this.cliente = cadastrar(this.cliente, nome, email, telefone);
 	}
 	
+	
 	public String getCliente() {
 		String string = String.format("%s\n%s", Registrable.getCliente(this.cliente), Printable.lineMaker());
 		return string;
 	}
-
+	
+	
 	public String getEmpresa() {
 		String string = Printable.getCliente(this.empresa);
 		String line = Printable.lineMaker();
@@ -54,14 +59,15 @@ public class Pedido extends PedidoAux{
 		string = String.format("%s\n%s, %s - %s\nCNPJ: %s\nIE:   %s\nIM:   %s\n%s", array[0], array[1], this.bairro, this.localizacao, this.cnpj, this.ie, this.im, line);
 		return string;
 	}
-
-	public void cadastrarEmpresa(String nome, String localizacao, String bairro, String rua, Integer numero, String cnpj, String ie, String im) {
+	
+	
+	public void cadastrarEmpresa(String nome, String localizacao, String bairro, String rua, Integer numero, Long cnpj, Long ie, Integer im) {
 		this.empresa = cadastrar(this.empresa, nome, rua, numero);
 		this.localizacao = localizacao;
 		this.bairro = bairro;
-		this.cnpj = cnpj;
-		this.ie = ie;
-		this.im = im;
+		this.cnpj = Checkable.checkCnpj(cnpj);
+		this.ie   = Checkable.checkIe(ie);
+		this.im   = Checkable.checkIm(im);
 	}
 	
 }
