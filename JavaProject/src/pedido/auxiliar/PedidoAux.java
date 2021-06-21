@@ -6,7 +6,7 @@ import java.util.List;
 
 import pedido.Printable;
 
-public class PedidoAux implements Requestable, Registrable, Formattable, Printable{
+public class PedidoAux{
 	private String id;
 	private Calendar data = Calendar.getInstance();
 	private Double valorTotal;
@@ -14,22 +14,22 @@ public class PedidoAux implements Requestable, Registrable, Formattable, Printab
 	private boolean timeChecker = false;
 	
 	public void setData(Integer dia, Integer mes, Integer ano) {
-		Formattable.setTime(this.data, dia, mes, ano);
+		Format.setTime(this.data, dia, mes, ano);
 	}
 	
 	
 	public void setData(Integer dia, Integer mes, Integer ano, Integer hora, Integer minuto, Integer segundo) {
 		this.timeChecker = true;
-		Formattable.setTime(this.data, dia, mes, ano, hora, minuto, segundo);
+		Format.setTime(this.data, dia, mes, ano, hora, minuto, segundo);
 	}
 	
 	
 	public String getData() {
 		if(this.timeChecker == true) {
-			return Formattable.getTime(this.data);
+			return Format.getTime(this.data);
 		}
 		else {
-			String[] array = Formattable.getTime(this.data).split(" ");
+			String[] array = Format.getTime(this.data).split(" ");
 			String string = String.format("%s %s HORÁRIO NÃO REGISTRADO", array[0], array[1]);
 			return string;
 		}

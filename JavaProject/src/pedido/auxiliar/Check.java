@@ -1,6 +1,6 @@
-package pedido;
+package pedido.auxiliar;
 
-public class Checkable {
+public class Check {
 	public static String checkCnpj(Long num) {
 		//"33.041.260/0652-90", "636.169.915.112", "23.126.457"
 		String string = num.toString();

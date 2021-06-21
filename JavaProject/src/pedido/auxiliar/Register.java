@@ -4,8 +4,8 @@ import java.util.Random;
 
 import sistema.Cadastro;
 
-public interface Registrable {
-	public default Cadastro cadastrar(Cadastro cliente, String nome, String email, Integer telefone) {
+public class Register {
+	public static Cadastro cadastrar(Cadastro cliente, String nome, String email, Integer telefone) {
 		Cadastro cadastro = new Cadastro();
 		Random random = new Random();
 		String id = String.format("%d%d%d%d.%d%d%d.%d%d%d%d", random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10), random.nextInt(10));

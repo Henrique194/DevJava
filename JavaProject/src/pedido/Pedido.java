@@ -6,7 +6,7 @@ import pedido.auxiliar.*;
 
 import sistema.Cadastro;
 
-public class Pedido extends PedidoAux implements Checkable{
+public class Pedido extends PedidoAux{
 	private Cadastro cliente;
 	private Cadastro empresa;
 	private String localizacao;
@@ -25,29 +25,29 @@ public class Pedido extends PedidoAux implements Checkable{
 	
 	
 	public void setProduto(String titulo, String id, Double quantidade, Double valorVenda) {
-		PedidoItem pedidoitem = Requestable.inicializarPedidoItem(titulo, id, quantidade, valorVenda);
+		PedidoItem pedidoitem = Request.inicializarPedidoItem(titulo, id, quantidade, valorVenda);
 		setPedidoItem(pedidoitem);
 	}
 	
 	
 	public void setLivro(String titulo, String id, Integer paginas, Double quantidade, Double valorVenda) {
-		PedidoItem livro = Requestable.Livro(titulo, paginas, id, quantidade, valorVenda);
+		PedidoItem livro = Request.Livro(titulo, paginas, id, quantidade, valorVenda);
 		setPedidoItem(livro);
 	}
 	
 	
 	public void setCd(String titulo, String id, Integer paginas, Double quantidade, Double valorVenda) {
-		PedidoItem cd = Requestable.Cd(titulo, paginas, id, quantidade, valorVenda);
+		PedidoItem cd = Request.Cd(titulo, paginas, id, quantidade, valorVenda);
 		setPedidoItem(cd);
 	}
 	
 	public void cadastrarCliente(String nome, String email, Integer telefone) {
-		this.cliente = cadastrar(this.cliente, nome, email, telefone);
+		this.cliente = Register.cadastrar(this.cliente, nome, email, telefone);
 	}
 	
 	
 	public String getCliente() {
-		String string = String.format("%s\n%s", Registrable.getCliente(this.cliente), Printable.lineMaker());
+		String string = String.format("%s\n%s", Register.getCliente(this.cliente), Printable.lineMaker());
 		return string;
 	}
 	
@@ -62,7 +62,7 @@ public class Pedido extends PedidoAux implements Checkable{
 	
 	
 	public void cadastrarEmpresa(String nome, String localizacao, String bairro, String rua, Integer numero, Long cnpj, Long ie, Integer im) {
-		this.empresa = cadastrar(this.empresa, nome, rua, numero);
+		this.empresa = Register.cadastrar(this.empresa, nome, rua, numero);
 		this.localizacao = localizacao;
 		this.bairro = bairro;
 		this.cnpj = Checkable.checkCnpj(cnpj);
