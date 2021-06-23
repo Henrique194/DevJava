@@ -8,12 +8,7 @@ import sistema.Cadastro;
 
 public class Pedido extends PedidoAux{
 	private Cadastro cliente;
-	private Cadastro empresa;
-	private String localizacao;
-	private String bairro;
-	private String cnpj;
-	private String ie;
-	private String im;
+	private Empresa empresa;
 	
 	public static Pedido getInstance() {
 		Pedido pedido = new Pedido();
@@ -22,7 +17,6 @@ public class Pedido extends PedidoAux{
 		pedido.setId(id);
 		return pedido;
 	}
-	
 	
 	public void setProduto(String titulo, String id, Double quantidade, Double valorVenda) {
 		PedidoItem pedidoitem = Request.inicializarPedidoItem(titulo, id, quantidade, valorVenda);
@@ -42,32 +36,26 @@ public class Pedido extends PedidoAux{
 	}
 	
 	public void cadastrarCliente(String nome, String email, Integer telefone) {
-		this.cliente = Register.cadastrar(this.cliente, nome, email, telefone);
+		this.cliente = Register.cadastrarCliente(nome, email, telefone);
 	}
 	
 	
 	public String getCliente() {
-		String string = String.format("%s\n%s", Register.getCliente(this.cliente), Printable.lineMaker());
+		String string = String.format("%s\n%s", Print.printCadastro(this.cliente, "cliente"), Print.lineMaker());
 		return string;
 	}
-	
-	
-	public String getEmpresa() {
-		String string = Printable.getCliente(this.empresa);
-		String line = Printable.lineMaker();
-		String[] array = string.split("-", 2);
-		string = String.format("%s\n%s, %s - %s\nCNPJ: %s\nIE:   %s\nIM:   %s\n%s", array[0], array[1], this.bairro, this.localizacao, this.cnpj, this.ie, this.im, line);
-		return string;
-	}
-	
 	
 	public void cadastrarEmpresa(String nome, String localizacao, String bairro, String rua, Integer numero, Long cnpj, Long ie, Integer im) {
-		this.empresa = Register.cadastrar(this.empresa, nome, rua, numero);
-		this.localizacao = localizacao;
-		this.bairro = bairro;
-		this.cnpj = Checkable.checkCnpj(cnpj);
-		this.ie   = Checkable.checkIe(ie);
-		this.im   = Checkable.checkIm(im);
+		this.empresa = Register.cadastrarEmpresa(nome, localizacao, bairro, rua, numero, cnpj, ie, im);
 	}
 	
+	public String getEmpresa() {
+		if(this.empresa != null) {
+			return Print.printEmpresa(this.empresa);
+		}
+		else {
+			String string = "EMPRESA NÃO CADASTRADA!";
+			return string;
+		}
+	}
 }

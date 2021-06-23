@@ -12,6 +12,10 @@ public class PedidoItem{
 	Livro livro = null;
 	CD cd = null;
 	
+	protected PedidoItem() {
+		
+	}
+	
 	public void setId(String id) {
 		this.id = id;
 	}

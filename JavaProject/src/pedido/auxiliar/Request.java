@@ -5,7 +5,7 @@ import sistema.CD;
 import sistema.Livro;
 import sistema.Produto;
 
-public class Request {
+public abstract class Request {
 	public static PedidoItem inicializarPedidoItem(String titulo, String id, Double quantidade, Double valorVenda) {
 		PedidoItem pedidoItem = new PedidoItem();
 		Random random = new Random();

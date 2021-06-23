@@ -2,7 +2,7 @@ package pedido.auxiliar;
 
 import java.util.Calendar;
 
-public class Format {
+public abstract class FormatTime {
 	public static Calendar setTime(Calendar data, Integer dia, Integer mes, Integer ano) {
 		data.set(ano, mes-1, dia);
 		return data;
