@@ -7,3 +7,8 @@
 /JavaProject/.classpath
 /JavaProject/.project
 /JavaProject/.gitignore
+
+/MavenProject/.settings/
+/MavenProject/target/
+/MavenProject/.classpath
+/MavenProject/.project

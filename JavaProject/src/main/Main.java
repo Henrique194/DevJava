@@ -1,5 +1,7 @@
 package main;
 
+import java.util.regex.*;
+
 import pedido.Pedido;
 
 public class Main {
@@ -19,5 +21,14 @@ public class Main {
 		System.out.println(pedido.getCliente());
 		pedido.printItens();
 		System.out.println("Valor Total: R$ " + pedido.getValorTotal());
+		
+		//String string = "Aqui";
+		//string.replaceAll(\\w{4}, $1);
+		//if("\\w{4}" == string) {
+			//System.out.println(string);
+		//}
+		//else {
+			//System.out.println(":(");
+		//}
 	}
 }
