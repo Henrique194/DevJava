@@ -1,0 +1,11 @@
+CREATE TABLE public.primeira_tabela (
+	id serial NOT NULL,
+	nome varchar NOT NULL,
+	telefone numeric NOT NULL,
+	CONSTRAINT primeira_tabela_pk PRIMARY KEY (id)
+);
+
+
+-- Auto-generated SQL script #202106242301 ***ADD***
+INSERT INTO public.primeira_tabela (id,nome,telefone)
+	VALUES (NULL,NULL,NULL);
