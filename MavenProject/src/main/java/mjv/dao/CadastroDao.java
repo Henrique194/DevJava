@@ -2,31 +2,59 @@ package mjv.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
+//import java.util.
+import sistema.Cadastro;
 
 import mjv.jdbc.connection.Conexao;
 
-public class CadastroDao {
+public class CadastroDao{
+	private final String NOME = "public.tab_cliente";
+	private final String INSERT = String.format("INSERT INTO %s (id,nome,telefone,email) VALUES (?,?,?,?);", this.NOME);
+	private final String DELETE = String.format("DELETE FROM %s WHERE id=?;", this.NOME);
+	private final String UPDATE = "UPDATE %s SET %s=? WHERE id=?;";
 	private Connection cnn = null;
 	
 	public CadastroDao() {
 		this.cnn = Conexao.criarConexao();
 	}
 	
-	public void incluir(String nome, Long telefone) {
-		String sql = "INSERT INTO public.segunda_tabela (nome,telefone) VALUES (?,?);";
-		try {
-			PreparedStatement st = cnn.prepareStatement(sql);
-			st.setString(1, nome);
-			st.setLong(2, telefone);
-			st.execute();
+	public void incluir(Cadastro cadastro) {
+		try(PreparedStatement st = cnn.prepareStatement(this.INSERT)) { //Automatic Resource Statement (Close Connection?) -- Java Tutorials/JDBC Database Access/Processing SQL Statements with JDBC/Closing Connections --
+			st.setString(1, cadastro.getId());
+			st.setString(2, cadastro.getNome());
+			st.setInt(3, cadastro.getTelefone());
+			st.setString(4, cadastro.getEmail());
+			st.executeUpdate();
 		} catch(SQLException e) {
 			System.err.println("FALHA AO CRIAR STATEMENT!");
 			System.err.println(e.getMessage());
 		}
 	}
 	
-	public void modificar() {
-		
+	public void remover(Integer id) {
+		try(PreparedStatement st = cnn.prepareStatement(this.DELETE)) {
+			st.setInt(1, id);
+			st.executeUpdate();
+		} catch(SQLException e){
+			System.err.println("FALHA AO CRIAR STATEMENT");
+			System.err.println(e.getMessage());
+		}
 	}
+	
+	public void modificar(String coluna, String id, Long telefone) {
+		String sql = String.format(UPDATE, this.NOME, coluna);
+		try(PreparedStatement st = cnn.prepareStatement(sql)) {
+			st.setLong(1, telefone);
+			st.setString(2, id);
+			
+			st.executeUpdate();
+		} catch(SQLException e){
+			System.err.println("FALHA AO CRIAR STATEMENT");
+			System.err.println(e.getMessage());
+		}
+	}
+	
+
 }
