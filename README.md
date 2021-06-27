@@ -15,7 +15,7 @@
    ┃
    ┃
    ┣ 📂pedido
-   ┃ ┣ 📜Conexao.java
+   ┃ ┣ 📜Conexao.java  
    ┃ ┗ 📂auxiliar
    ┃   ┣ 📜Check.java
    ┃   ┣ 📜FormatTime.java
