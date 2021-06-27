@@ -42,7 +42,7 @@
    ┃
    ┃
    ┗ 📂resources
-     ┣ 📂META-INF
-     ┗ 📜persistence.xml
+     ┗ 📂META-INF
+       ┗ 📜persistence.xml
 
 ```
