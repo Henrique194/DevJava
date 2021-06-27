@@ -3,7 +3,7 @@
 ## Objetivos
 - [x] Projetar **Classes** Com Métodos De **Inserção De Dados** Num Objeto
 - [x] **Salvar** Os Dados Do Objeto Num Banco De Dados Através De **JDBC**
-- [ ] **Salvar** Os Dados Do Objeto Num Banco De Dados Através De **JDBC**
+- [ ] **Salvar** Os Dados Do Objeto Num Banco De Dados Através De **JPA**
 
 ## Estrutura Do Projeto
 ```
