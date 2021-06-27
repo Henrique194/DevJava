@@ -5,6 +5,7 @@ import java.util.Random;
 import pedido.auxiliar.*;
 
 import sistema.Cadastro;
+import sistema.Empresa;
 
 public class Pedido extends PedidoAux{
 	private Cadastro cliente;
@@ -35,20 +36,24 @@ public class Pedido extends PedidoAux{
 		setPedidoItem(cd);
 	}
 	
-	public void cadastrarCliente(String nome, String email, Integer telefone) {
-		this.cliente = Register.cadastrarCliente(nome, email, telefone);
+	public void cadastrarCliente(int id, String nome, String email, Long telefone) {
+		this.cliente = Register.cadastrarCliente(id ,nome, email, telefone);
 	}
 	
-	
-	public String getCliente() {
-		String string = String.format("%s\n%s", Print.printCadastro(this.cliente, "cliente"), Print.lineMaker());
-		return string;
+	public void setCliente(Cadastro cliente) {
+		this.cliente = cliente;
 	}
-	public Cadastro getCliente2() {
+	
+	public Cadastro getCliente() {
 		return this.cliente;
 	}
 	
-	public void cadastrarEmpresa(String nome, String localizacao, String bairro, String rua, Integer numero, Long cnpj, Long ie, Integer im) {
+	public String printCliente() {
+		String string = String.format("%s\n%s", Print.printCadastro(this.cliente), Print.lineMaker());
+		return string;
+	}
+	
+	public void cadastrarEmpresa(String nome, String localizacao, String bairro, String rua, Long numero, Long cnpj, Long ie, Integer im) {
 		this.empresa = Register.cadastrarEmpresa(nome, localizacao, bairro, rua, numero, cnpj, ie, im);
 	}
 	

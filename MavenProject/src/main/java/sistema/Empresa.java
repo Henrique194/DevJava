@@ -1,25 +1,12 @@
-package pedido;
+package sistema;
 
-import sistema.Cadastro;
-
-public class Empresa {
-	private Cadastro cadastro;
+public class Empresa extends Entidade{
 	private String localizacao;
 	private String bairro;
 	private String cnpj;
 	private String ie;
 	private String im;
 	
-	public Cadastro getCadastro() {
-		return cadastro;
-	}
-
-
-	public void setCadastro(Cadastro cadastro) {
-		this.cadastro = cadastro;
-	}
-
-
 	public String getLocalizacao() {
 		return localizacao;
 	}

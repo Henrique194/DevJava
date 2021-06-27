@@ -1,6 +1,6 @@
 package main;
 
-import java.util.regex.*;
+//import java.util.regex.*;
 
 import pedido.Pedido;
 
@@ -22,13 +22,13 @@ public class Main {
 		pedido.printItens();
 		System.out.println("Valor Total: R$ " + pedido.getValorTotal());
 		
-		//String string = "Aqui";
-		//string.replaceAll(\\w{4}, $1);
-		//if("\\w{4}" == string) {
-			//System.out.println(string);
-		//}
-		//else {
-			//System.out.println(":(");
-		//}
+		/*String string = "123456789";
+		string = string.replaceAll("\\d{3}\\d{3}\\d{3}", "$1.$2.$3");
+		if("\\w{4}" == string) {
+			System.out.println(string);
+		}
+		else {
+			System.out.println(string);
+		}*/
 	}
 }

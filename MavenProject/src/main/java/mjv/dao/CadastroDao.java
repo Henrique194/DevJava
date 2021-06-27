@@ -22,10 +22,10 @@ public class CadastroDao{
 	
 	public void incluir(Cadastro cadastro) {
 		try(PreparedStatement st = cnn.prepareStatement(this.INSERT)) { //Automatic Resource Statement (Close Connection?) -- Java Tutorials/JDBC Database Access/Processing SQL Statements with JDBC/Closing Connections --
-			st.setString(1, cadastro.getId());
+			st.setInt(1, cadastro.getId());
 			st.setString(2, cadastro.getNome());
-			st.setInt(3, cadastro.getTelefone());
-			st.setString(4, cadastro.getEmail());
+			st.setLong(3, cadastro.getNumero());
+			st.setString(4, cadastro.getDescricao());
 			st.executeUpdate();
 		} catch(SQLException e) {
 			System.err.println("FALHA AO CRIAR STATEMENT!");
@@ -35,7 +35,7 @@ public class CadastroDao{
 	
 	public void remover(Integer id) {
 		try(PreparedStatement st = cnn.prepareStatement(this.DELETE)) {
-			st.setInt(1, id);
+			st.setString(1, id.toString());
 			st.executeUpdate();
 		} catch(SQLException e){
 			System.err.println("FALHA AO CRIAR STATEMENT");
@@ -48,7 +48,6 @@ public class CadastroDao{
 		try(PreparedStatement st = cnn.prepareStatement(sql)) {
 			st.setLong(1, telefone);
 			st.setString(2, id);
-			
 			st.executeUpdate();
 		} catch(SQLException e){
 			System.err.println("FALHA AO CRIAR STATEMENT");

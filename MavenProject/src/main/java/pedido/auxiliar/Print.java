@@ -2,32 +2,19 @@ package pedido.auxiliar;
 
 import java.util.List;
 
-import pedido.Empresa;
 import sistema.Cadastro;
+import sistema.Empresa;
 
 public abstract class Print{	
 	
-	public static String printCadastro(Cadastro cliente, String tipo) {
-		String client = null;
-		if(tipo.compareToIgnoreCase("cliente") == 0) {
-			client = String.format("Cliente: %s - ID: %s - Telefone: %d - Email: %s", cliente.getNome(), cliente.getId(), cliente.getTelefone(), cliente.getEmail());
+	public static String printCadastro(Cadastro cliente) {
+			String client = String.format("Cliente: %s - ID: %s - Telefone: %d - Email: %s", cliente.getNome(), cliente.getId(), cliente.getNumero(), cliente.getDescricao());
 			return client;
-		}
-		else if(tipo.compareToIgnoreCase("empresa") == 0) {
-			client = String.format("Empresa: %s-Rua: %s, %d", cliente.getNome(), cliente.getEmail(), cliente.getTelefone());
-			return client;
-		}
-		else {
-			client = "TIPO DE CADASTRO ESPECIFICADO INVÁLIDO!";
-			return client;
-		}
 	}
 	
 	public static String printEmpresa(Empresa empresa) {
-		String string = Print.printCadastro(empresa.getCadastro(), "empresa");
 		String line = Print.lineMaker();
-		String[] array = string.split("-", 2);
-		string = String.format("%s\n%s, %s - %s\nCNPJ: %s\nIE:   %s\nIM:   %s\n%s", array[0], array[1], empresa.getBairro(), empresa.getLocalizacao(), empresa.getCnpj(), empresa.getIe(), empresa.getIm(), line);
+		String string = String.format("Empresa: %s\nRua: %s, %d, %s - %s\nCNPJ: %s\nIE:   %s\nIM:   %s\n%s", empresa.getNome(), empresa.getDescricao(), empresa.getNumero(), empresa.getBairro(), empresa.getLocalizacao(), empresa.getCnpj(), empresa.getIe(), empresa.getIm(), line);
 		return string;
 	}
 	

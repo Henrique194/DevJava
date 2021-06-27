@@ -2,15 +2,18 @@ package main;
 
 import mjv.dao.CadastroDao;
 import pedido.Pedido;
+import pedido.auxiliar.Register;
+import sistema.Cadastro;
 
 public class Main {
 	public static void main(String[] args) {
-		Pedido pedido = Pedido.getInstance();
-		pedido.cadastrarCliente("Henrique Jorge Barateli", "henriquejb194@email.com", 56312876);
-		//System.out.println(pedido.getCliente());
 		CadastroDao cadastro = new CadastroDao();
-		cadastro.incluir(pedido.getCliente2());
-		//cadastro.modificar("telefone", "1", 123l);
-		//cadastro.remover(6);
+		Cadastro cliente = Register.cadastrarCliente(3, "Henrique Jorge Barateli", "henrique194@gmail.com", 11940389284l);
+		//System.out.println(pedido.getCliente());
+		
+		cadastro.incluir(cliente);
+		//System.out.println(pedido.getCliente().getId());
+		//cadastro.modificar("telefone", pedido.getCliente2().getId(), 1l);
+		//cadastro.remover(3);
 	}
 }
