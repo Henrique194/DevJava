@@ -43,6 +43,6 @@
    ┃
    ┗ 📂resources
      ┣ 📂META-INF
-     ┗ 📜persistence.json
+     ┗ 📜persistence.xml
 
 ```
