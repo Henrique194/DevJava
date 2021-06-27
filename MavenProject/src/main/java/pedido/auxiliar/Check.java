@@ -33,4 +33,15 @@ public abstract class Check {
 		string = string.replaceAll("(\\d{2})(\\d{3})(\\d{3})", "$1.$2.$3");
 		return string;
 	}
+	
+	public static int checkColunas(String string) {
+		switch(string) {
+			case "id":
+				return 4;
+			case "telefone":
+				return 2;
+			default:
+				return 0;
+		}
+	}
 }

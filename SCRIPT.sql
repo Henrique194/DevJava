@@ -37,4 +37,6 @@ CREATE TABLE public.tab_cliente (
 );
 
 
+SELECT * FROM public.tab_cliente ***SELECT***
+
 ALTER TABLE public.tab_cliente DROP COLUMN telefone;

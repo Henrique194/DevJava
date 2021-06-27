@@ -4,7 +4,15 @@ package main;
 
 import pedido.Pedido;
 
+
+
+
 public class Main {
+	
+	public static enum Colunas {
+		id, NOME, TELEFONE, EMAIL
+	}
+	
 	public static void main(String[] args) {
 		Pedido pedido = Pedido.getInstance();
 		
@@ -21,7 +29,8 @@ public class Main {
 		System.out.println(pedido.getCliente());
 		pedido.printItens();
 		System.out.println("Valor Total: R$ " + pedido.getValorTotal());
-		
+		String string = "id";
+		System.out.println(string.equals(Colunas.id.toString()));
 		/*String string = "123456789";
 		string = string.replaceAll("\\d{3}\\d{3}\\d{3}", "$1.$2.$3");
 		if("\\w{4}" == string) {

@@ -13,7 +13,6 @@ public abstract class Conexao {
 	public static Connection criarConexao() {
 		try {
 			cnn = DriverManager.getConnection(url, user, password);
-			System.out.println("Sucesso!");
 		} catch(SQLException e) {
 			System.out.println("Falha!");
 			System.out.println(e.getMessage());
