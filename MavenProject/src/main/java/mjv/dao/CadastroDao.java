@@ -1,14 +1,17 @@
 package mjv.dao;
 
 import java.sql.Connection;
+import java.sql.JDBCType;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+
+import mjv.jdbc.connection.Conexao;
 
 import sistema.Cadastro;
 
-import mjv.jdbc.connection.Conexao;
-import pedido.auxiliar.Check;
+
 
 public class CadastroDao{
 	private final String NOME = "public.tab_cliente_jdbc";
@@ -36,9 +39,9 @@ public class CadastroDao{
 		}
 	}
 	
-	public void remover(Integer id) {
+	public void remover(Integer linha) {
 		try(PreparedStatement st = cnn.prepareStatement(this.DELETE)) {
-			st.setInt(1, id);
+			st.setInt(1, linha);
 			st.executeUpdate();
 		} catch(SQLException e){
 			System.err.println("FALHA AO CRIAR STATEMENT");
@@ -46,32 +49,32 @@ public class CadastroDao{
 		}
 	}
 	
-	public void modificar(String coluna, String string, int id) {
+	public void modificar(int linha, String coluna, String string) {
 		String sql = String.format(UPDATE, this.NOME, coluna);
 		try(PreparedStatement ps = cnn.prepareStatement(sql)) {
-			int tipo = Check.checkColunas(coluna);
-			switch(tipo) {
-			case 4:
+			String tipoColuna = getTipoColuna(ps, coluna);
+			//System.out.println(tipoColuna);
+			switch(tipoColuna) {
+			case "INTEGER":
 				ps.setInt(1, Integer.parseInt(string));
 				break;
-			case 2:
+			case "NUMERIC":
 				ps.setLong(1, Long.parseLong(string));
 				break;
 			default:
 				ps.setString(1, string);
 				break;
 			}
-			ps.setInt(2, id);
+			ps.setInt(2, linha);
 			ps.executeUpdate();
-		} catch(SQLException e){
+		} catch(SQLException ex){
 			System.err.println("FALHA AO CRIAR STATEMENT");
-			System.err.println(e.getMessage());
+			System.err.println(ex.getMessage());
 		}
 	}
 	
 	public void getDatabase() {
-		try(PreparedStatement ps = this.cnn.prepareStatement(SELECT)){
-			ResultSet rs = ps.executeQuery();
+		try(PreparedStatement ps = cnn.prepareStatement(SELECT); ResultSet rs = ps.executeQuery();){
 			while(rs.next()) {
 				int id = rs.getInt(1);
 				String nome = rs.getString(2);
@@ -91,9 +94,8 @@ public class CadastroDao{
 	
 	public void getDatabase(String coluna) {
 		String sql = SELECT.replaceAll("\\*", coluna);
-		try(PreparedStatement ps = this.cnn.prepareStatement(sql)){
+		try(PreparedStatement ps = this.cnn.prepareStatement(sql); ResultSet rs = ps.executeQuery();){
 			String colunaUpperCase = coluna.toUpperCase();
-			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				String valor = rs.getString(coluna);
 				System.out.println(colunaUpperCase + ": " + valor);
@@ -105,15 +107,22 @@ public class CadastroDao{
 		}
 	}
 	
-	
-	/*public void print(int num) {
-		try(PreparedStatement ps = this.cnn.prepareStatement(SELECT)){
+	private String getTipoColuna(PreparedStatement ps, String coluna) {
+		String tipoColuna = null;
+		try {
+			ps = cnn.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
-			ResultSetMetaData rsmd = rs.getMetaData();
-			System.out.println(rsmd.getColumnType(num));
+			int indexColuna = rs.findColumn(coluna);
+			ResultSetMetaData rsmd = ps.getMetaData();
+			int typeColuna = rsmd.getColumnType(indexColuna);
+			JDBCType jdbcType = JDBCType.valueOf(typeColuna);
+			tipoColuna = jdbcType.getName();
+			ps.close();
+			rs.close();
 		} catch(SQLException ex) {
 			System.err.println("FALHA AO CRIAR STATEMENT!");
 			System.err.println(ex.getMessage());
 		}
-	}*/	
+		return tipoColuna;
+	}
 }

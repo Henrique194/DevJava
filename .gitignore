@@ -12,3 +12,13 @@
 /MavenProject/target/
 /MavenProject/.classpath
 /MavenProject/.project
+
+SpringProject/HELP.md
+SpringProject/.gitignore
+SpringProject/.classpath
+SpringProject/.project
+SpringProject/mvnw
+SpringProject/mvnw.cmd
+SpringProject/target/
+SpringProject/.settings/
+SpringProject/.mvn/
