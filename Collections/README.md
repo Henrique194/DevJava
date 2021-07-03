@@ -31,6 +31,10 @@ MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave
 - replace(K k, V v): susbstitui o valor associado a chave k pelo novo valor  v;
 - clear(): remove todos os mapeamentos do mapa;
 - keySet(): retorna um objeto "_Set_" com as chaves do mapa (alterações no mapa são refletidas no objeto Set e vice-versa);
+- forEach(BiConsumer<? super K,​? super V> ação): realiza a dada ação para cada elemento do mapa;
+
+## Exemplo De Programa
+Programa De Cadastro Simples:
 - 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
