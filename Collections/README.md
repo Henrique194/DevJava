@@ -19,6 +19,8 @@ As coleções ainda podem ser ordenadas e/ou classificadas<sup>[[2]]</sup>:
 
 Para este estudo, iremos focar na Coleção "_Map_".
 
+## MAP - Definição E Características
+MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave/valor). Assim, com um MAP é possível obter um valor através de uma chave, onde tanto a chave quanto o valor são objetos. Como evidenciado no diagrama UML acima, a interface Map possui quatro principais implementações: Hashtable, HashMap, LinkedHashMap e TreeMap.
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
