@@ -37,14 +37,7 @@ MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave
 
 Programa De Cadastro Simples:
 
-<img align="left" src="Main.png" width=700><br>
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-aqui
+![Main](Main.pgn)
 <img align="center" src="Action.png" width=700><br><br>
 <img align="left" src="Cadastro.png" width=700><br><br>
 
