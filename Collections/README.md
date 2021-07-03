@@ -39,6 +39,9 @@ Programa De Cadastro Simples:
 
 <img align="left" src="Main.png" width=700><br>
 <br>
+<br>
+<br>
+<br><br>
 <img align="center" src="Action.png" width=700><br><br>
 <img align="left" src="Cadastro.png" width=700><br><br>
 
