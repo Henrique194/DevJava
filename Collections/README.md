@@ -21,4 +21,4 @@ Para este estudo, iremos focar na Coleção "_Map_".
 
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
-[2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035/ref=sr_1_7?dchild=1&qid=1625322773&refinements=p_27%3AKathy+Sierra&s=books&sr=1-7>
+[2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
