@@ -37,9 +37,9 @@ MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave
 
 Programa De Cadastro Simples Com HashMap:
 
-![Main](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Main.png)
-![Action](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Action.png)
-![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Cadastro.png)
+![Main](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagem/Main.png)
+![Action](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagem/Action.png)
+![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagem/Cadastro.png)
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
