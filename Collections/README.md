@@ -22,5 +22,15 @@ Para este estudo, iremos focar na Coleção "_Map_".
 ## MAP - Definição E Características
 MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave/valor). Assim, com um MAP é possível obter um valor através de uma chave, onde tanto a chave quanto o valor são objetos. Como evidenciado no diagrama UML acima, a interface Map possui quatro principais implementações: Hashtable, HashMap, LinkedHashMap e TreeMap.
 
+## Principais Métodos
+- isEmpty(): returna "_true_" se o mapa não contém elementos;
+- put(K k, V v): associa a chave k com o valor v;
+- get(Object k): retorna o objeto mapeado a chave k, ou "_null_" se não houver nenhum objeto mapeado;
+- size(): retornar a quantidade de mapeamentos num mapa;
+- values(): retorna um objeto "_Collection_" com os valores contidos no mapa (alterações no mapa são refletidas no objeto Collection e vice-versa);
+- replace(K k, V v): susbstitui o valor associado a chave k pelo novo valor  v;
+- clear(): remove todos os mapeamentos do mapa;
+- keySet(): retorna um objeto "_Set_" com as chaves do mapa (alterações no mapa são refletidas no objeto Set e vice-versa);
+- 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
