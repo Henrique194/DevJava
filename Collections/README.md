@@ -1,9 +1,24 @@
 # Estudo Sobre Framework Collections - MAP
 ## Definição Da Framework Collections  
-A Framework Collections ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>  
+A Framework Collections ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>. Diagrama Do Framework Collections:
 
  <p align="center">
   <img align="center" src="Framework.png" width=550>  
 </p>
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
+
+Como se pode observar, ela é composta pelas interfaces e suas respectivas implementações. Ainda, pode surgir uma confusão associadas a palavra "_Collections_":<sup>[[2]]</sup>
+- Ela pode se referir a qualquer coleção, como List, Set, Map e Queue;
+- Quando escrita com "_C_" maiúsculo e "_s_" no final, ela se refere a classe Collections;
+- Quando escrita somente com "_C_" maiúsculo e **sem** "_s_" no final, ela se refere a a interface Collection;
+
+As coleções ainda podem ser ordenadas e/ou classificadas<sup>[[2]]</sup>:
+* Para ser ordenada, os elementos da coleção devem poder ser iterados numa ordem específica. Esta ordem específica pode ser relacionada aos índices dos elementos ou atém mesmo o momentos em que foi inserido os elementos.
+* Para ser classificada, os elementos da coleção devem respeitar uma ordem estabelecida por regras. Dessa maneira, toda coleção classifica é também uma coleção ordenada. Entretando, esta "ordem estabelecida por regras" (ordem de classificação) não esta relacionada aos indices ou momentos de inserção dos elementos, mas sim as propriedades dos elementos.
+
+Para este estudo, iremos focar na Coleção "_Map_".
+
+
+[1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
+[2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035/ref=sr_1_7?dchild=1&qid=1625322773&refinements=p_27%3AKathy+Sierra&s=books&sr=1-7>
