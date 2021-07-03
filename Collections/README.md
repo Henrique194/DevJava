@@ -38,8 +38,8 @@ MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave
 Programa De Cadastro Simples:
 
 ![Main](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Main.png)
-<img align="center" src="Action.png" width=700><br><br>
-<img align="left" src="Cadastro.png" width=700><br><br>
+![Action](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Action.png)
+![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Cadastro.png)
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
