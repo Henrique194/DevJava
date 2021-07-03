@@ -46,7 +46,7 @@ Programa De Cadastro Simples:
 </p>
 
 <p>
-  <img align="right" src="Cadastro.png" width=100>  
+  <img align="top" align="right" src="Cadastro.png" width=100>  
 </p>
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
