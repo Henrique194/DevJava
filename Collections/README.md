@@ -37,7 +37,7 @@ MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave
 
 Programa De Cadastro Simples:
 
-![Main](Main.pgn)
+![Main](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Main.png)
 <img align="center" src="Action.png" width=700><br><br>
 <img align="left" src="Cadastro.png" width=700><br><br>
 
