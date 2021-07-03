@@ -3,7 +3,7 @@
 A Framework Collections ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>. Diagrama Do Framework Collections:
 
  <p align="center">
-  <img align="center" src="Framework.png" width=700>  
+  <img align="center" src="Imagens/Framework.png" width=750>  
 </p>
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
@@ -21,6 +21,10 @@ Para este estudo, iremos focar na Coleção "_Map_".
 
 ## MAP - Definição E Características
 MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave/valor). Assim, com um MAP é possível obter um valor através de uma chave, onde tanto a chave quanto o valor são objetos. Como evidenciado no diagrama UML acima, a interface Map possui quatro principais implementações: Hashtable, HashMap, LinkedHashMap e TreeMap.
+- HashTable é uma classe similar a Vector, no sentido que ela é thread-safe (sincronizada). Ademais, Hashtable não permite o uso de null para o mapeamento.
+- HashMap é uma classe não ordenada e não classificada. Diferentemente do Hashtable, o HashMap permite uma chave"_null_" e diversoes valores "_null_".
+- LinkedHashMap é similar ao HashMap, mas possui ordem de inserção. Apesar de ser mais lento para inserção e remoção de elementos, o LinkedHashMap é melhor para iteração.
+- TreeMap é uma classe ordenada que permite customização através das interdaces _Comparable_ e _Comparator_.
 
 ## Principais Métodos
 - isEmpty(): returna "_true_" se o mapa não contém elementos;
@@ -37,9 +41,9 @@ MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave
 
 Programa De Cadastro Simples Com HashMap:
 
-![Main](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagem/Main.png)
-![Action](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagem/Action.png)
-![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagem/Cadastro.png)
+![Main](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Main.png)
+![Action](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Action.png)
+![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Cadastro.png)
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
