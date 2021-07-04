@@ -9,7 +9,6 @@ A Java Collections Framework também é muito útil, pois ajuda a minimizar o es
   <img align="center" src="Imagens/Framework.png" width=750>  
 </p>
 
-
 Como se pode observar, ela é composta por interfaces e suas respectivas implementações. Ademais, nota-se também que a palavra "_Collections_" pode possuir diferentes sentidos:<sup>[[2]]</sup>
 - Ela pode se referir a qualquer coleção, como List, Set, Map e Queue;
 - Quando escrita com "_C_" maiúsculo e "_s_" no final, ela se refere a classe Collections;
@@ -17,10 +16,10 @@ Como se pode observar, ela é composta por interfaces e suas respectivas impleme
 
 As coleções ainda podem ser ordenadas e/ou classificadas<sup>[[2]]</sup>:
 
-- Para ser ordenada, os elementos da coleção devem poder ser iterados numa ordem específica. Esta ordem específica pode ser relacionada aos índices dos elementos ou atém mesmo o momentos em que foi inserido os elementos.
-- Para ser classificada, os elementos da coleção devem respeitar uma ordem estabelecida por regras. Dessa maneira, toda coleção classifica é também uma coleção ordenada. Entretando, esta "ordem estabelecida por regras" (ordem de classificação) não esta relacionada aos indices ou momentos de inserção dos elementos, mas sim as propriedades dos elementos.
+- Para ser ordenada, os elementos da coleção devem poder ser iterados numa ordem específica. Esta ordem específica pode ser relacionada aos índices dos elementos ou até mesmo o momento em que foi inserido os elementos.
+- Para ser classificada, os elementos da coleção devem respeitar uma ordem estabelecida por regras. Dessa maneira, toda coleção classificada é também uma coleção ordenada. Entretando, esta "ordem estabelecida por regras" (ordem de classificação) não esta relacionada aos indices ou momentos de inserção dos elementos, mas sim as propriedades dos elementos. Ainda, a ordem de classificação também pode ser chamada de ordem natural quando associada a classe "_Comparable_".
 
-Para este estudo, iremos focar na Coleção "_Map_".
+Para este estudo, irá ser feito um estudo sobre Coleção "_Map_".
 
 ## MAP - Definição E Características
 MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave/valor). Assim, com um MAP é possível obter um valor através de uma chave, onde tanto a chave quanto o valor são objetos. Como evidenciado no diagrama UML acima, a interface Map possui quatro principais implementações: Hashtable, HashMap, LinkedHashMap e TreeMap.
