@@ -38,9 +38,9 @@ Os pricipais métodos da coleção Map são:<sup>[[3]]</sup>
 - replace(K k, V v): susbstitui o valor associado a chave k pelo novo valor  v;
 - clear(): remove todos os mapeamentos do mapa;
 - keySet(): retorna um objeto "_Set_" com as chaves do mapa (alterações no mapa são refletidas no objeto Set e vice-versa);
-- forEach(BiConsumer<? super K,​? super V> ação): realiza a dada ação para cada elemento do mapa;
+- forEach(BiConsumer<? super K,? super V> ação): realiza a dada ação para cada elemento do mapa;
 
-## Exemplo De Programa
+## Exemplo De Programa Usando Algumas Dos Principais Métodos
 
 Programa De Cadastro Simples Com HashMap:
 
@@ -49,6 +49,12 @@ Programa De Cadastro Simples Com HashMap:
 ![Action](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Action.png)
 
 ![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Cadastro.png)
+
+Cada classe desse programa possui uma função específica:
+- A classe "_Main_" é resposável por cadastrar os clientes através da classe "_Cadastro_" e os mapear com um número inteiro, que representa o id dos clientes. Além disso, a classe "_Main_" imprime os clientes através da classe "_Action_".
+- A classe "_Action_" extende de BiConsumer<T, U> e representa uma ação que irá ser feita em cada elemento do mapa através do método "_forEach()_" do prórpio mapa.
+- A classe "_Cadastro_" representa um cliente que possui um nome, uma descrição (email, rua ou qualquer idenficador adicional) e um número de telefone. A classe "_Cadastro_" possui um método "_setCliente()_" para cadastrar todas as informações do cliente de uma só vez, mas os setters também são uma opção. Ainda, percebe-se que o método "_toString()_" foi sobrecarregado, pois é através desse métodos que irá se imprimir o cliente no Console.
+
 
 ## Comparable E Comparator
 A Interface Comparable defini a "ordem natural" que os objetos de uma classe devem ser organizados. Se fosse necessário ordenar os objetos de uma classe de outra maneira, poderia ser criado uma classe que implementa a interface Comparator e implementar o método compare(); As classes Integer e String já implementam Comparable, por isso um objeto TreeMap ordena um Inetegar por ordem ascentende e String por ordem alfabética.
