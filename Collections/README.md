@@ -52,6 +52,10 @@ A Interface Comparable defini a "ordem natural" que os objetos de uma classe dev
 
 No exemplo acima, foi usado o HashMap por ser a implementação mais rápida de um Map no quesito de inserção e remoção. Entretanto, se fosse necessário uma grande quantidade de iteração dos elementos do mapa, é recomendado usar outra implementação, como o LinkeHashMap, que mantêm os elementos oeganizados de acordo com a ordem de inserção. Já se o critério for organização, poderia se usar um TreeMap. A implementação do código ficaria assim:
 
+![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/CompMain.png)
+![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Clientes.png)
+![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/QuantidadeComparator.png)
+
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
