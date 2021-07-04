@@ -3,9 +3,7 @@
 Coleções são estruturas da qual um objeto é capaz de agrupar outros objetos. Partindo desse princípio, a Framework Collections pode ser definida como:
 > "uma arquitetura unificada para representação e manipulação de coleções."<sup>[[1]]</sup>
 
-A Java Collections Framework também é muito útil, pois ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>.
-
-Diagrama Do Framework Collections:
+A Java Collections Framework também é muito útil, pois ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>. Esta Framework possui o seguinte diagrama:
 
  <p align="center">
   <img align="center" src="Imagens/Framework.png" width=750>  
