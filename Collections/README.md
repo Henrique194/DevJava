@@ -9,7 +9,6 @@ A Java Collections Framework também é muito útil, pois ajuda a minimizar o es
   <img align="center" src="Imagens/Framework.png" width=750>  
 </p>
 
-[1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 
 Como se pode observar, ela é composta pelas interfaces e suas respectivas implementações. Ainda, pode surgir uma confusão associadas a palavra "_Collections_":<sup>[[2]]</sup>
 - Ela pode se referir a qualquer coleção, como List, Set, Map e Queue;
