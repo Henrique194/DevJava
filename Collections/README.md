@@ -51,15 +51,17 @@ Programa De Cadastro Simples Com HashMap:
 ![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Cadastro.png)
 
 Cada classe desse programa possui uma função específica:
-- A classe "_Main_" é resposável por cadastrar os clientes através da classe "_Cadastro_" e os mapear com um número inteiro, que representa o id dos clientes. Além disso, a classe "_Main_" imprime os clientes através da classe "_Action_".
-- A classe "_Action_" extende de BiConsumer<T, U> e representa uma ação que irá ser feita em cada elemento do mapa através do método "_forEach()_" do prórpio mapa.
+- A classe "_Main_" é resposável por cadastrar os clientes através da classe "_Cadastro_" e os mapear com um número inteiro, que representa o id dos clientes. Além disso, a classe "_Main_" imprime os clientes através da classe "_Action_". O mapa ainda aplicou o importante método "_isEmpty()_" para a impressão dos elementos.
+- A classe "_Action_" extende de BiConsumer<T, U> e representa uma ação que irá ser feita em cada elemento do mapa através do método "_forEach()_".
 - A classe "_Cadastro_" representa um cliente que possui um nome, uma descrição (email, rua ou qualquer idenficador adicional) e um número de telefone. A classe "_Cadastro_" possui um método "_setCliente()_" para cadastrar todas as informações do cliente de uma só vez, mas os setters também são uma opção. Ainda, percebe-se que o método "_toString()_" foi sobrecarregado, pois é através desse métodos que irá se imprimir o cliente no Console.
 
 
 ## Comparable E Comparator
-A Interface Comparable defini a "ordem natural" que os objetos de uma classe devem ser organizados. Se fosse necessário ordenar os objetos de uma classe de outra maneira, poderia ser criado uma classe que implementa a interface Comparator e implementar o método compare(); As classes Integer e String já implementam Comparable, por isso um objeto TreeMap ordena um Inetegar por ordem ascentende e String por ordem alfabética.
+A Interface Comparable define a "ordem natural" dos objetos de uma classe. Esta "ordem natural" pode ser encotrada em diversas classes no Java: Integer, Long, String, Date, etc. Para a classe String, por exemplo, ela define que os objetos devem ser classificados em ordem alfabética. Já para Integer, a "ordem natural" especifica que os objetos devem estar em ordem crescente. Para ser usada, a interface "_Comparable_" precisa ser implementada e seu único método ("_compareTo()_") sobrecarregado. Assim sendo, as classes que implementarem "_Comparable_" irão possuir objetos com uma ordem já pré-estabelecida, a "ordem natural". 
 
-No exemplo acima, foi usado o HashMap por ser a implementação mais rápida de um Map no quesito de inserção e remoção. Entretanto, se fosse necessário uma grande quantidade de iteração dos elementos do mapa, é recomendado usar outra implementação, como o LinkeHashMap, que mantêm os elementos oeganizados de acordo com a ordem de inserção. Já se o critério for organização, poderia se usar um TreeMap. A implementação do código ficaria assim:
+A classe "_Comparator_" é usada para especificar outra ordenação para classes que já implementam "_Comparable_". Com isso, se for necessário ordenar os objetos de uma classe "A" de outra maneira, poderia ser criado uma classe auxiliar "B" que implementa a interface Comparator e sobrecarrega o método compare(). Desse modo, poderia se fazer uso de métodos da classe "_Collections_", como o "_sort()_", ou instanciar um TreeMap com a classe auxiliar "B".<sup>[[2]]</sup>
+
+No aplicação abaixo, foi usado o método da classe auxiliar:
 
 ![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/CompMain.png)
 ![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Clientes.png)
@@ -68,6 +70,3 @@ No exemplo acima, foi usado o HashMap por ser a implementação mais rápida de 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
 [3]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Map.html>
-[4]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/HashMap.html>
-[8]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html>
-[9]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Comparator.html>
