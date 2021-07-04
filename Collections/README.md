@@ -17,18 +17,19 @@ Como se pode observar, ela é composta por interfaces e suas respectivas impleme
 As coleções ainda podem ser ordenadas e/ou classificadas<sup>[[2]]</sup>:
 
 - Para ser ordenada, os elementos da coleção devem poder ser iterados numa ordem específica. Esta ordem específica pode ser relacionada aos índices dos elementos ou até mesmo o momento em que foi inserido os elementos.
-- Para ser classificada, os elementos da coleção devem respeitar uma ordem estabelecida por regras. Dessa maneira, toda coleção classificada é também uma coleção ordenada. Entretando, esta "ordem estabelecida por regras" (ordem de classificação) não esta relacionada aos indices ou momentos de inserção dos elementos, mas sim as propriedades dos elementos. Ainda, a ordem de classificação também pode ser chamada de ordem natural quando associada a classe "_Comparable_".
+- Para ser classificada, os elementos da coleção devem respeitar uma ordem estabelecida por regras. Dessa maneira, toda coleção classificada é também uma coleção ordenada. Entretanto, esta "ordem estabelecida por regras" (ordem de classificação) não esta relacionada aos indices ou momentos de inserção dos elementos, mas sim as propriedades dos elementos. Ainda, a ordem de classificação também pode ser chamada de ordem natural quando associada a classe "_Comparable_".
 
-Para este estudo, irá ser feito um estudo sobre Coleção "_Map_".
+Para este estudo, irá ser feito um estudo sobre coleção "_Map_".
 
 ## MAP - Definição E Características
-MAP é um tipo de coleção estruturada em volta do conceito de key/value (chave/valor). Assim, com um MAP é possível obter um valor através de uma chave, onde tanto a chave quanto o valor são objetos. Como evidenciado no diagrama UML acima, a interface Map possui quatro principais implementações: Hashtable, HashMap, LinkedHashMap e TreeMap.
-- HashTable é uma classe similar a Vector, no sentido que ela é thread-safe (sincronizada). Ademais, Hashtable não permite o uso de null para o mapeamento.
-- HashMap é uma classe não ordenada e não classificada. Diferentemente do Hashtable, o HashMap permite uma chave"_null_" e diversoes valores "_null_".
-- LinkedHashMap é similar ao HashMap, mas possui ordem de inserção. Apesar de ser mais lento para inserção e remoção de elementos, o LinkedHashMap é melhor para iteração.
-- TreeMap é uma classe ordenada que permite customização através das interdaces _Comparable_ e _Comparator_.
+Map é um tipo de coleção estruturada em torno do conceito de key/value (chave/valor). Assim, utilizando-se um Map, é possível associar uma chave ao valor um valor. Tanto a chave quanto o valor são objetos quaisquer que irão ser mapeados. Por fim, observa-se no diagrama UML acima que a coleção Map possui quatro implementações principais:<sup>[[2]]</sup>
+- HashTable é uma classe similar a Vector, no sentido que ela é thread-safe (sincronizada). A Hashtable não permite o uso de null para o mapeamento.
+- HashMap é uma classe não ordenada e não classificada. Diferentemente do Hashtable, o HashMap permite uma chave"_null_" e diversoes valores "_null_". A HashMap é ideal para aplicações com muito adições e/ou remoções, mas não é muito otimizada para iterações.
+- LinkedHashMap é similar ao HashMap, mas possui ordem de inserção. Em contrapartida com o HashMap, a LinkedHashMap é melhor para iteração, mas não é adequada ser para inserção e remoção de elementos.
+- TreeMap é uma classe ordenada que permite customização através das interdaces _Comparable_ e _Comparator_. A TreeMap é ideal em operações de ordenação, mas não é recomendada para adição e remoção de elementos.
 
 ## Principais Métodos
+Os pricipais métodos da coleção Map são:<sup>[[3]]</sup>
 - isEmpty(): returna "_true_" se o mapa não contém elementos;
 - put(K k, V v): associa a chave k com o valor v;
 - get(Object k): retorna o objeto mapeado a chave k, ou "_null_" se não houver nenhum objeto mapeado;
@@ -60,6 +61,7 @@ No exemplo acima, foi usado o HashMap por ser a implementação mais rápida de 
 
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
-[3]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/HashMap.html>
-[4]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html>
-[5]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Comparator.html>
+[3]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Map.html>
+[4]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/HashMap.html>
+[8]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html>
+[9]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Comparator.html>
