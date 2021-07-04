@@ -1,6 +1,11 @@
 # Estudo Sobre Framework Collections - MAP
 ## Definição Da Framework Collections  
-A Framework Collections ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>. Diagrama Do Framework Collections:
+Coleções são estruturas da qual um objeto é capaz de agrupar outros objetos. Partindo desse princípio, a Framework Collections pode ser definida como:
+> "uma arquitetura unificada que para representação e manipulação de coleções."<sup>[[1]]</sup>
+
+A Java Collections Framework também é muito útil, pois ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>.
+
+Diagrama Do Framework Collections:
 
  <p align="center">
   <img align="center" src="Imagens/Framework.png" width=750>  
@@ -56,6 +61,8 @@ No exemplo acima, foi usado o HashMap por ser a implementação mais rápida de 
 ![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/Clientes.png)
 ![Cadastro](https://raw.githubusercontent.com/Henrique194/DevJava/main/Collections/Imagens/QuantidadeComparator.png)
 
-
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
+[3]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/HashMap.html>
+[4]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Comparable.html>
+[5]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Comparator.html>
