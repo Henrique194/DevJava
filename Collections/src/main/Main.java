@@ -1,9 +1,6 @@
 package main;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
 	//Exemplo De Aplicação De Um Cadastro Simples
@@ -16,11 +13,11 @@ public class Main {
 		Cadastro luciene = new Cadastro();
 		
 		//Cadastrando Clientes
-		henrique.setCliente("Henrique Jorge", "henrique@mail.com", 11839503346l);
+		luciene.setCliente("Luciene Jorge", "luciene@mail.com", 11202392365l);
 		joao.setCliente("Joao Silva", "joao@mail.com", 11385044905l);
 		andre.setCliente("Andre Matos", "andre@mail.com", 11486036830l);
 		pedro.setCliente("Pedro Santos", "pedro@mail.com", 11400485745l);
-		luciene.setCliente("Luciene Jorge", "luciene@mail.com", 11202392365l);
+		henrique.setCliente("Henrique Jorge", "henrique@mail.com", 11839503346l);
 		
 		//Inserindo Clientes
 		mapa.put(1, luciene);
@@ -30,6 +27,11 @@ public class Main {
 		mapa.put(5, henrique);
 		
 		//Printando Clientes
+		printClientes(mapa);
+		
+	}
+	
+	public static void printClientes(HashMap<Integer, Cadastro> mapa) {
 		if(mapa.isEmpty()) {
 			System.out.println("NENHUM CLIENTE CADASTRADO!");
 		} else {
