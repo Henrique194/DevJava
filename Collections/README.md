@@ -69,6 +69,12 @@ No aplicação abaixo, foi usado o método da classe auxiliar:
 
 Nessa aplicação, a classe "_Cadastro_" ganhou um variável "quantidade" que representa a quantidade de itens comprados pelo cliente. Em seguida, foi criado a classe auxilixar "_QuantidadeComparator_" para que ordene o mapa de modo que o cliente com a menor quantidade de itens seja o primeiro. Na classe "_Clientes_" foi criado os métodos capazes de retornar um mapa com "ordem natural" e outro mapa com ordem por quantidade de itens. Por fim, ao ser implementado na classe "_Main_", percebe-se que o mapa com "ordem natural" ordenou os clientes com base no id, enquanto que o mapa com ordem por quantidade colocou os clientes com a quantidade de itens com ordem crescente.
 
+## Referências
+
+1. Java Tutorials
+2. Certificação Sun Para Programador Java 6. Guia De Estudos
+3. Oracle Documentation
+
 [1]: <https://docs.oracle.com/javase/tutorial/collections/intro/index.html>
 [2]: <https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-Para-Programador-Java-Estudos/dp/8576083035>
 [3]: <https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Map.html>
