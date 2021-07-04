@@ -4,7 +4,7 @@ public class Cadastro{
 	private String  nome;
 	private String  descriçao;
 	private Long numero;
-	
+	private Integer quantidade;
 	
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -29,6 +29,15 @@ public class Cadastro{
 	public String getDescricao() {
 		return this.descriçao;
 	}
+	
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+	
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+	
 	
 	public void setCliente( String nome, String email, Long telefone) {
 		this.setNome(nome);

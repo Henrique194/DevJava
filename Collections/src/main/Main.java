@@ -1,42 +1,45 @@
 package main;
 
-import java.util.HashMap;
+import java.util.TreeMap;
 
 public class Main {
 	//Exemplo De Aplicação De Um Cadastro Simples
 	public static void main(String[] args) {
-		HashMap<Integer, Cadastro> mapa = new HashMap<Integer, Cadastro>();
-		Cadastro henrique = new Cadastro();
-		Cadastro joao = new Cadastro();
-		Cadastro andre = new Cadastro();
-		Cadastro pedro = new Cadastro();
-		Cadastro luciene = new Cadastro();
 		
+		Cadastro[] clientes = new Cadastro[3];
+		clientes[0] = new Cadastro();
+		clientes[1] = new Cadastro();
+		clientes[2] = new Cadastro();
 		//Cadastrando Clientes
-		luciene.setCliente("Luciene Jorge", "luciene@mail.com", 11202392365l);
-		joao.setCliente("Joao Silva", "joao@mail.com", 11385044905l);
-		andre.setCliente("Andre Matos", "andre@mail.com", 11486036830l);
-		pedro.setCliente("Pedro Santos", "pedro@mail.com", 11400485745l);
-		henrique.setCliente("Henrique Jorge", "henrique@mail.com", 11839503346l);
+		clientes[0].setCliente("Luciene Jorge", "luciene@mail.com", 11202392365l);
+		clientes[1].setCliente("Henrique Jorge", "henrique@mail.com", 11839503346l);
+		clientes[2].setCliente("Pedro Santos", "pedro@mail.com", 11400485745l);
+		
+		//Inserindo Quantidade De Itens Por Cliente
+		clientes[0].setQuantidade(30);
+		clientes[1].setQuantidade(20);
+	    clientes[2].setQuantidade(10);
 		
 		//Inserindo Clientes
-		mapa.put(1, luciene);
-		mapa.put(2, joao);
-		mapa.put(3, andre);
-		mapa.put(4, pedro);
-		mapa.put(5, henrique);
+	    TreeMap<Integer, Cadastro> mapa = Clientes.cadastrar(clientes);
+	    TreeMap<Integer, Cadastro> mapaPorQuantidade = Clientes.cadastrarPorQuantidade(clientes);
+		
 		
 		//Printando Clientes
+	   System.out.println("MAPA COM ORDEM NATURAL!");
 		printClientes(mapa);
+		System.out.println("MAPA COM ORDEM POR QUANTIDADE!");
+		printClientes(mapaPorQuantidade);
 		
 	}
 	
-	public static void printClientes(HashMap<Integer, Cadastro> mapa) {
+	public static void printClientes(TreeMap<Integer, Cadastro> mapa) {
 		if(mapa.isEmpty()) {
 			System.out.println("NENHUM CLIENTE CADASTRADO!");
 		} else {
 			Action action = new Action();
 			mapa.forEach(action);
+			System.out.print("\n");
 		}
 	}
 }
