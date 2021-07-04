@@ -1,7 +1,7 @@
 # Estudo Sobre Framework Collections - MAP
 ## Definição Da Framework Collections  
 Coleções são estruturas da qual um objeto é capaz de agrupar outros objetos. Partindo desse princípio, a Framework Collections pode ser definida como:
-> "uma arquitetura unificada que para representação e manipulação de coleções."<sup>[[1]]</sup>
+> "uma arquitetura unificada para representação e manipulação de coleções."<sup>[[1]]</sup>
 
 A Java Collections Framework também é muito útil, pois ajuda a minimizar o esforço de programação, reduz o esforço de aprender API e ajuda na reutilização de software.<sup>[[1]]</sup>.
 
