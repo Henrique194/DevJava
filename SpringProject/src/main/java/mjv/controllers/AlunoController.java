@@ -1,6 +1,8 @@
 package mjv.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -49,8 +51,13 @@ public class AlunoController {
 	}
 	
 	@DeleteMapping("/delete")
-	public void delete(@RequestParam("id") Integer id) {
-		repo.deleteById(id);
+	public ResponseEntity delete(@RequestParam("id") Integer id) {
+		try {
+			repo.deleteById(id);
+			return new ResponseEntity(HttpStatus.OK);
+		} catch(Exception ex) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+		}
 	}
 	
 	@GetMapping("/getById")
