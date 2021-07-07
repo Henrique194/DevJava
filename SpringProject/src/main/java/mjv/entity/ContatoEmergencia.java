@@ -20,7 +20,7 @@ public class ContatoEmergencia {
 	private String email;
 	
 	@Column(name = "ce1_telefone", length = 11, nullable = false)
-	
+	private Long telefone;
 	//Abaixo Se Encontra getters e setters
 	
 	
@@ -30,7 +30,7 @@ public class ContatoEmergencia {
 	
 	
 	
-	private Long telefone;
+	
 	
 	public String getNome() {
 		return nome;
