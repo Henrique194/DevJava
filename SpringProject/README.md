@@ -78,3 +78,13 @@ Como se pode observar, a classe é formado por um atributo "id" (como Primary Ke
 No pacote "_mjv.controllers_" se encontra as classes responsáveis por gerenciar as requisições HTTP. Elas permitem que tanto um aluno quanto uma pessoa possam ser registrados no banco de dados, além atualizar ou deletar qualquer registro já existente. Estes são os métodos da classe _AlunoController_:
 
 ![AlunoController](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/AlunoController1.png)
+
+Como se pode observar, esta classe possui os métodos CRUD. Ademais, os métodos contam com uma exceção para alertar o usuário de uma ação imcompatível, como por exemplo, deletar um cadastro que não se encontra no banco de dados. A exceções são tratadas pelo _GlobalHandler.java_, que ptorna a exceção mais legível para o usuário. A classe _PessoaController.java_ possui métodos análogos aos da classe _AlunoController.java_ e ainda alguns outros, como 'findByName" e "findByNomeContaining" que realizam uma busca especializada no banco de dados.
+
+## GlobalHandler E Exceções
+
+Para que as exceções do banco de dados se tornem mais apropriadas ao usuário, foi criado o pacote "mjv.exceptions". Este pacote contêm duas classes: "_NotFoundExcpetion.java_" e "_PostExcpetion.java_". A primeira exceção é lançada se o usuário tentar realizar uma ação sobre um cadastro que não existe no banco de dados, como deletar ou atualizar ("PUT"/"PATCH"). Já a segunda exceção ocorre se o usuário tentar adicionar um cadastro ("POST") com um "id" já registrado no banco.
+
+                                    Classe _Pessoa_ com as infromações pessoais do aluno:
+
+![Error](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/Error.png)
