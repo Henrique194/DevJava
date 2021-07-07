@@ -85,6 +85,6 @@ Como se pode observar, esta classe possui os métodos CRUD. Ademais, os métodos
 
 Para que as exceções do banco de dados se tornem mais apropriadas ao usuário, foi criado o pacote "mjv.exceptions". Este pacote contêm duas classes: "_NotFoundExcpetion.java_" e "_PostExcpetion.java_". A primeira exceção é lançada se o usuário tentar realizar uma ação sobre um cadastro que não existe no banco de dados, como deletar ou atualizar ("PUT"/"PATCH"). Já a segunda exceção ocorre se o usuário tentar adicionar um cadastro ("POST") com um "id" já registrado no banco.
 
-                                                      Exemplo Erro:
+                                                        Exemplo Erro:
 
 ![Error](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/Error.png)
