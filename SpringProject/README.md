@@ -61,7 +61,7 @@
      ┗ 📜application.properties
 ```
 
-![UntitledDiagram](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/Untitled Diagram.png)
+![UntitledDiagram](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/Untitled%20Diagram.png)
 
 ## Papel Das Classes
 Além da classe de execução **SpringProjectApplication.java**, criou-se uma série de pacotes para cuidar da inclusão de dados no banco, das requisições HTTP e das exceções. Primeiramente, no **pacote _repositories_**, encontram-se duas classes que iram das operações CRUD: 
