@@ -1,12 +1,12 @@
 package mjv.handler;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class ResponseError {
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDate time;
+	@JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+	private LocalDateTime time;
 	
 	private String status = "error";
 	
@@ -14,11 +14,11 @@ public class ResponseError {
 	
 	private String error = "error";
 
-	public LocalDate getTime() {
+	public LocalDateTime getTime() {
 		return time;
 	}
 
-	public void setTime(LocalDate time) {
+	public void setTime(LocalDateTime time) {
 		this.time = time;
 	}
 
