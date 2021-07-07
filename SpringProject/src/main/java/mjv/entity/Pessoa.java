@@ -61,6 +61,7 @@ public class Pessoa {
 	
 	@OneToOne(cascade=CascadeType.ALL, mappedBy = "pessoa")
 	Aluno aluno;
+	//Abaixo Se Encontra getters e setters
 
 	public String getNome() {
 		return nome;

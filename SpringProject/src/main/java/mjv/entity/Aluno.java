@@ -47,6 +47,24 @@ public class Aluno {
 	})
 	ContatoEmergencia contato2;
 	
+	//Abaixo Se Encontrar getters e setters
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public Integer getId() {
 		return id;
 	}
