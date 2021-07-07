@@ -2,56 +2,63 @@
 
 ## Objetivos
 - [x] Projetar **Classes** Com Métodos De **Inserção De Dados** Num Objeto
-- [x] **Salvar** Os Dados Do Objeto Num Banco De Dados Através De **JDBC**
-- [ ] **Salvar** Os Dados Do Objeto Num Banco De Dados Através De **JPA**
+- [x] Projetar Métodos CRUD com **SpringBoot**
+- [X] Tratar Exceções Com Handler
 
 ## Estrutura Do Projeto
 ```
 📦src
  ┗ 📂main
    ┣ 📂java
-   ┃ ┗ 📂main
-   ┃   ┗ 📜main.java
-   ┃
-   ┃
-   ┣ 📂mjv.dao
-   ┃ ┗ 📜CadastroDao.java
-   ┃
-   ┃
-   ┣ 📂mjv.jdbc.connection
-   ┃ ┗ 📜Conexao.java
-   ┃
-   ┃
-   ┣ 📂pedido
-   ┃ ┣ 📜Conexao.java  
-   ┃ ┗ 📂auxiliar
-   ┃   ┣ 📜Check.java
-   ┃   ┣ 📜FormatTime.java
-   ┃   ┣ 📜PedidoAux.java
-   ┃   ┣ 📜PedidoItem.java
-   ┃   ┣ 📜Print.java
-   ┃   ┣ 📜Register.java
-   ┃   ┗ 📜Request.java
-   ┃
-   ┃
-   ┣ 📂sistema
-   ┃ ┣ 📜Cadastro.java
-   ┃ ┣ 📜CD.java
-   ┃ ┣ 📜Empresa.java
-   ┃ ┣ 📜Entidade.java
-   ┃ ┣ 📜Livro.java
-   ┃ ┗ 📜Produto.java
-   ┃
-   ┃
-   ┣ 📂transmissao
-   ┃ ┣ 📜TransmissorEmail.java
-   ┃ ┣ 📜TransmissorMensagem.java
-   ┃ ┗ 📜TransmissorSms.java
+   ┃ ┗ 📂mjv
+   ┃   ┗ 📜SpringProjectApplication.java
+   ┃   ┃
+   ┃   ┃
+   ┃   ┣  📂config
+   ┃   ┃  ┗ 📜SwaggerConfig.java
+   ┃   ┃
+   ┃   ┃
+   ┃   ┣  📂controllers
+   ┃   ┃  ┣ 📜AlunoController.java
+   ┃   ┃  ┃
+   ┃   ┃  ┗ 📜PessoaController.java
+   ┃   ┃
+   ┃   ┃
+   ┃   ┣  📂entity
+   ┃   ┃  ┣ 📜Aluno.java
+   ┃   ┃  ┃
+   ┃   ┃  ┣ 📜ContatoEmergencia.java
+   ┃   ┃  ┃
+   ┃   ┃  ┣ 📜Pessoa.java
+   ┃   ┃  ┃
+   ┃   ┃  ┗ 📂enums
+   ┃   ┃    ┣ 📜NivelAluno.java
+   ┃   ┃    ┃
+   ┃   ┃    ┣ 📜Parentesco.java
+   ┃   ┃    ┃
+   ┃   ┃    ┗ 📜Sexo.java
+   ┃   ┃
+   ┃   ┃
+   ┃   ┣  📂exceptions
+   ┃   ┃  ┣ 📜NotFoundException.java
+   ┃   ┃  ┃
+   ┃   ┃  ┗ 📜PostException.java
+   ┃   ┃
+   ┃   ┃
+   ┃   ┣  📂handler
+   ┃   ┃  ┣ 📜GlobalHandler.java
+   ┃   ┃  ┃
+   ┃   ┃  ┗ 📜ResponseError.java
+   ┃   ┃
+   ┃   ┃
+   ┃   ┗  📂repositories
+   ┃      ┣ 📜AlunoRepository.java
+   ┃      ┃
+   ┃      ┗ 📜PessoaRepository.java
    ┃
    ┃
    ┗ 📂resources
-     ┗ 📂META-INF
-       ┗ 📜persistence.xml
+     ┗ 📜application.properties
 ```
 ## Papel Das Classes
 Além da classe de execução **Main.java**, criou-se inicialmente um *pacote pedido, sistema e transmissao*. O pacote pedido possui a classe **Pedido.java**, esta que é responsável por representar um pedido associado a um cliente e uma empresa. O *pacote pedido* ainda guarda um pacote "auxiliar", que tem o papel de executar métodos importantes para o cadastro e associação do cliente com a classe **Pedido.java**. Ademais, também criou-se um *pacote sistema* com classes relativas à materialização de entidades, tais como: cliente, Empresa, CD, etc.
