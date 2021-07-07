@@ -1,21 +1,21 @@
 package mjv.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import mjv.entity.Aluno;
 import mjv.entity.enums.NivelAluno;
 import mjv.exceptions.NotFoundException;
 import mjv.exceptions.PostException;
 import mjv.repositories.AlunoRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController // @Controller + @RespondeBody
 @RequestMapping("/mjv/aluno")
@@ -25,10 +25,7 @@ public class AlunoController {
 	
 	@PostMapping("/post")
 	public void create(@RequestParam("id") Integer id, @RequestParam("nivel") NivelAluno nivel, @RequestBody Aluno aluno) {
-		Aluno alunoDb = findById(id);
-		if(alunoDb != null) {
-			throw new PostException(id);
-		}
+		postChecker(id);
 		aluno.setId(id);
 		aluno.setNivel(nivel);
 		aluno.getPessoa().setId(id);
@@ -37,10 +34,7 @@ public class AlunoController {
 	
 	@PutMapping("/put")
 	public void update(@RequestParam("id") Integer id, @RequestParam("nivel") NivelAluno nivel, @RequestBody Aluno aluno) {
-		Aluno alunoDb = findById(id);
-		if(alunoDb == null) {
-			throw new NotFoundException(id, "PUT");
-		}
+		foundChecker(id, "PUT");
 		aluno.setId(id);
 		aluno.setNivel(nivel);
 		aluno.getPessoa().setId(id);
@@ -49,10 +43,7 @@ public class AlunoController {
 	
 	@PatchMapping("/patch")
 	public void patch(@RequestParam("id") Integer id, @RequestBody Aluno aluno) {
-		Aluno alunoDb = findById(id);
-		if(alunoDb == null) {
-			throw new NotFoundException(id, "PATCH");
-		}
+		foundChecker(id, "PATCH");
 		aluno.setId(id);
 		aluno.getPessoa().setId(id);
 		Aluno alunoVelho = findById(id);
@@ -62,10 +53,7 @@ public class AlunoController {
 	
 	@DeleteMapping("/delete")
 	public void delete(@RequestParam("id") Integer id) {
-		Aluno aluno = findById(id);
-		if(aluno == null) {
-			throw new NotFoundException(id, "DELETE");
-		}
+		foundChecker(id, "DELETE");
 		repo.deleteById(id);
 	}
 	
@@ -77,6 +65,20 @@ public class AlunoController {
 	@GetMapping("/getAll")
 	public Iterable<Aluno> findAll(){
 		return repo.findAll();
+	}
+	
+	private void postChecker(Integer id) {
+		Aluno alunoDb = findById(id);
+		if(alunoDb == null) {
+			throw new PostException(id);
+		}
+	}
+	
+	private void foundChecker(Integer id, String type) {
+		Aluno alunoDb = findById(id);
+		if(alunoDb == null) {
+			throw new NotFoundException(id, type);
+		}
 	}
 	
 	private Aluno updater(Aluno aluno, Aluno alunoVelho) {

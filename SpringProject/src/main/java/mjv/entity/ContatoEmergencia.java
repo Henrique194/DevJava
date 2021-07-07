@@ -20,7 +20,7 @@ public class ContatoEmergencia {
 	private String email;
 	
 	@Column(name = "ce1_telefone", length = 11, nullable = false)
-	private String telefone;
+	private Long telefone;
 	
 	public String getNome() {
 		return nome;
@@ -40,10 +40,10 @@ public class ContatoEmergencia {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTelefone() {
+	public Long getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	public void setTelefone(Long telefone) {
 		this.telefone = telefone;
 	}
 	
