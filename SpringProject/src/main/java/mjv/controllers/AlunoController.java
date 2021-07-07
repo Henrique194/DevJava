@@ -69,7 +69,7 @@ public class AlunoController {
 	
 	private void postChecker(Integer id) {
 		Aluno alunoDb = findById(id);
-		if(alunoDb == null) {
+		if(alunoDb != null) {
 			throw new PostException(id);
 		}
 	}

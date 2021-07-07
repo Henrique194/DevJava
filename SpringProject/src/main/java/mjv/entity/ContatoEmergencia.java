@@ -20,6 +20,16 @@ public class ContatoEmergencia {
 	private String email;
 	
 	@Column(name = "ce1_telefone", length = 11, nullable = false)
+	
+	//Abaixo Se Encontra getters e setters
+	
+	
+	
+	
+	
+	
+	
+	
 	private Long telefone;
 	
 	public String getNome() {

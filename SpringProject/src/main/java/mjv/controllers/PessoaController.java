@@ -69,7 +69,7 @@ public class PessoaController {
 	
 	private void postChecker(Integer id) {
 		Pessoa pessoaDb = findById(id);
-		if(pessoaDb == null) {
+		if(pessoaDb != null) {
 			throw new PostException(id);
 		}
 	}
