@@ -88,3 +88,9 @@ Para que as exceções do banco de dados se tornem mais apropriadas ao usuário,
                                                    Exemplo De Erro Tratado:
 
 ![Error](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/Error.png)
+
+Para tratar essas exceções foi criado a classe _GlobalHandler_. Ela é capaz de pegar o erro lançado e tratar para o usuário.
+
+                                                   Classe GlobalHandler:
+
+![GlobalHandler](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/GlobalHandler.png)
