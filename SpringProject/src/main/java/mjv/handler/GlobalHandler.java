@@ -36,12 +36,12 @@ public class GlobalHandler extends ResponseEntityExceptionHandler{
 	private ResponseEntity<Object> handlerPost(PostException pex, WebRequest request){
 		ResponseError error = new ResponseError();
 		error.setTime(LocalDateTime.now());
-		error.setStatusCode(HttpStatus.NOT_ACCEPTABLE.value());
+		error.setStatusCode(HttpStatus.CONFLICT.value());
 		error.setError(pex.getMessage());
 		error.setStatus("ARQUIVO JÁ EXISTENTE!");
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-		return handleExceptionInternal(pex, error, headers, HttpStatus.NOT_ACCEPTABLE, request);
+		return handleExceptionInternal(pex, error, headers, HttpStatus.CONFLICT, request);
 	}
 }
