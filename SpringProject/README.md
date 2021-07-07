@@ -61,6 +61,12 @@
      ┗ 📜application.properties
 ```
 ## Papel Das Classes
-Além da classe de execução **Main.java**, criou-se inicialmente um *pacote pedido, sistema e transmissao*. O pacote pedido possui a classe **Pedido.java**, esta que é responsável por representar um pedido associado a um cliente e uma empresa. O *pacote pedido* ainda guarda um pacote "auxiliar", que tem o papel de executar métodos importantes para o cadastro e associação do cliente com a classe **Pedido.java**. Ademais, também criou-se um *pacote sistema* com classes relativas à materialização de entidades, tais como: cliente, Empresa, CD, etc.
+Além da classe de execução **SpringProjectApplication.java**, criou-se uma série de pacotes para cuidar da inclusão de dados no banco, das requisições HTTP e das exceções. Primeiramente, no pacote _repositories_, encontram-se duas classes que iram das operações CRUD: 
+- **AlunoRepository** que irá cuidar da inserção do objeto **Aluno**;
+- **PessoaRepository** que irá cuidar da inserção do Objeto **Pessoa**.
 
-Atualmente, o projeto é focado em salvar os dados do cliente num banco de dados. Para este fim, escolheu-se o *PostgreSQL* e o *Dbeaver*. A abordagem inicial faz uso do *JDBC*, mas o projeto também pretende fazer uso de *JPA*.
+A classe _Aluno_ representa um aluno que irá se cadastrar. Esta classe foi codificada da seguinte maneira:
+
+![Aluno](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/Aluno.png)
+
+Como se pode observar, a classe é formado por um atributo "id" (como Primary Key no banco de dados) e um atributo "nivel". Além disso, percebe-se que a classe _Aluno_ também possui um atributo pessoa, de modo que um aluno contém informações pessoais, tais como: nome, nacionalidade, cpf, etc. Observa-se uma "Foreign Key", de modo que a "tab_aluno" fique conectada a outra tabela que contêm as informações pessoais deste aluno. A "Foreign Key" esta associada ao "id" do aluno, assim o aluno tem um mesmo "id" tanto na "tab_aluno" quanto na tabela com as informações pessoais. Por fim, este aluno possui dois contatos de emergência, que são representados pelos onjetos "contato1" e "contato2". Diferentemente do "contato1", não é necessário registrar um "contato2" no banco de dados.
