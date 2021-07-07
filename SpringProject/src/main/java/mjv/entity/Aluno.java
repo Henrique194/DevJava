@@ -47,7 +47,7 @@ public class Aluno {
 	})
 	ContatoEmergencia contato2;
 	
-	//Abaixo Se Encontrar getters e setters
+	//Abaixo Se Encontra getters e setters
 	
 	
 	
