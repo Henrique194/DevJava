@@ -74,3 +74,7 @@ Como se pode observar, a classe é formado por um atributo "id" (como Primary Ke
                                     Classe _Pessoa_ com as infromações pessoais do aluno:
                                                   
 ![Pessoa](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/Pessoa.png)
+
+No pacote "_mjv.controllers_" se encontra as classes responsáveis por gerenciar as requisições HTTP. Elas permitem que tanto um aluno quanto uma pessoa possam ser registrados no banco de dados, além atualizar ou deletar qualquer registro já existente. Estes são os métodos da classe _AlunoController_:
+
+![AlunoController](https://raw.githubusercontent.com/Henrique194/DevJava/main/SpringProject/imgs/AlunoController.png)
